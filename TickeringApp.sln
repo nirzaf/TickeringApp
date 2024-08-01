@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TickeringApp", "TickeringApp.csproj", "{B8A4FBEF-CB99-4087-AA40-C19E119593AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8A4FBEF-CB99-4087-AA40-C19E119593AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A4FBEF-CB99-4087-AA40-C19E119593AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A4FBEF-CB99-4087-AA40-C19E119593AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A4FBEF-CB99-4087-AA40-C19E119593AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
