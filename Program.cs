@@ -14,6 +14,12 @@ internal static class Program
     }
 }
 
+//     | Method               | Mean      | Error     | StdDev    | Median    |
+//     |--------------------- |----------:|----------:|----------:|----------:|
+//     | MeasureUsingContains |  4.020 ns | 0.1777 ns | 0.4983 ns |  3.990 ns |
+//     | MeasureUsingAny      | 24.025 ns | 1.2563 ns | 3.5843 ns | 22.780 ns |
+
+
 public class MyBenchmark
 {
     private readonly List<int> _numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
