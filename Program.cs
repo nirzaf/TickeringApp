@@ -7,39 +7,38 @@ using System.Diagnostics;
 using System;
 using System.Diagnostics;
 
-namespace TicketingApp
+namespace TicketingApp;
+
+public class Employee(string name, string position, int salary)
 {
-    public class Employee(string name, string position, int salary)
+    public string Name { get; set; } = name;
+    public string Position { get; set; } = position;
+    public int Salary { get; set; } = salary;
+}
+
+static class Program
+{
+    static void Main(string[] args)
     {
-        public string Name { get; set; } = name;
-        public string Position { get; set; } = position;
-        public int Salary { get; set; } = salary;
-    }
+        Console.WriteLine("Enter Your Name: ");
+        var name = Console.ReadLine();
 
-    static class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Enter Your Name: ");
-            var name = Console.ReadLine();
+        Console.WriteLine("Enter Your Position: ");
+        var position = Console.ReadLine();
 
-            Console.WriteLine("Enter Your Position: ");
-            var position = Console.ReadLine();
+        Console.WriteLine("Enter Your Salary: ");
+        var salary = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter Your Salary: ");
-            var salary = Convert.ToInt32(Console.ReadLine());
+        var employee = new Employee(name, position, salary);
 
-            var employee = new Employee(name, position, salary);
+        Console.WriteLine($"Name: {employee.Name}, Position: {employee.Position}, Salary: {employee.Salary}");
 
-            Console.WriteLine($"Name: {employee.Name}, Position: {employee.Position}, Salary: {employee.Salary}");
+        PerformanceCounter cpuCounter = new("Processor", "% Processor Time", "_Total");
+        float cpuUsage = cpuCounter.NextValue();
+        Thread.Sleep(1000); // wait a second to get a valid reading
+        cpuUsage = cpuCounter.NextValue();
 
-            PerformanceCounter cpuCounter = new("Processor", "% Processor Time", "_Total");
-            float cpuUsage = cpuCounter.NextValue();
-            Thread.Sleep(1000); // wait a second to get a valid reading
-            cpuUsage = cpuCounter.NextValue();
-
-            Console.WriteLine($"CPU Usage: {cpuUsage}%");
-        }
+        Console.WriteLine($"CPU Usage: {cpuUsage}%");
     }
 }
 /*
@@ -47,8 +46,8 @@ internal static class Program
 {
 static void Main(string[] args)
 {
-    var summary = BenchmarkRunner.Run<MyBenchmark>();
-    Console.WriteLine(summary);
+var summary = BenchmarkRunner.Run<MyBenchmark>();
+Console.WriteLine(summary);
 }
 }
 
