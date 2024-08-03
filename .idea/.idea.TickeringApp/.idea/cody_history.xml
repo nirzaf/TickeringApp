@@ -37,9 +37,47 @@
               </chat>
               <chat>
                 <internalId value="55125e7b-5ea8-419b-aa05-50f4481bca34" />
+                <llm>
+                  <llm>
+                    <model value="google/gemini-1.5-flash-latest" />
+                    <provider value="Google" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="speed" />
+                      </list>
+                    </tags>
+                    <title value="Gemini 1.5 Flash" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
               </chat>
             </list>
           </chats>
+          <defaultLlm>
+            <llm>
+              <model value="google/gemini-1.5-flash-latest" />
+              <provider value="Google" />
+              <tags>
+                <list>
+                  <option value="gateway" />
+                  <option value="speed" />
+                </list>
+              </tags>
+              <title value="Gemini 1.5 Flash" />
+              <usage>
+                <list>
+                  <option value="chat" />
+                  <option value="edit" />
+                </list>
+              </usage>
+            </llm>
+          </defaultLlm>
         </AccountData>
       </list>
     </accountData>
