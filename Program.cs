@@ -5,16 +5,9 @@ using BenchmarkDotNet.Running;
 
 using System.Diagnostics;
 using System;
-using System.Diagnostics;
+using System.Management;
 
 namespace TicketingApp;
-
-public class Employee(string name, string position, int salary)
-{
-    public string Name { get; set; } = name;
-    public string Position { get; set; } = position;
-    public int Salary { get; set; } = salary;
-}
 
 static class Program
 {
@@ -33,10 +26,12 @@ static class Program
 
         Console.WriteLine($"Name: {employee.Name}, Position: {employee.Position}, Salary: {employee.Salary}");
 
-        PerformanceCounter cpuCounter = new("Processor", "% Processor Time", "_Total");
-        float cpuUsage = cpuCounter.NextValue();
-        Thread.Sleep(1000); // wait a second to get a valid reading
-        cpuUsage = cpuCounter.NextValue();
+        // Create a ManagementObjectSearcher to query the CPU usage
+        var searcher = new ManagementObjectSearcher("select * from Win32_Processor");
+        var cpuUsagePerformanceCounter = searcher.Get().Cast<ManagementObject>().First();
+
+        // Get the CPU usage value
+        var cpuUsage = Convert.ToSingle(cpuUsagePerformanceCounter["LoadPercentage"]);
 
         Console.WriteLine($"CPU Usage: {cpuUsage}%");
     }
@@ -68,5 +63,3 @@ public bool MeasureUsingContains() => _numbers.Contains(5);
 public bool MeasureUsingAny() => _numbers.Any(x => x == 5);
 }
 */
-
-
