@@ -1,8 +1,8 @@
-using System;
-using Xunit;
+using System.Management;
 using TicketingApp;
+using Xunit;
 
-namespace TicketingApp.Tests
+namespace TickeringApp
 {
     public class ProgramTests
     {
