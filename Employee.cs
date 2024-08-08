@@ -1,16 +1,9 @@
 namespace TicketingApp
 {
-    public class Employee
+    public class Employee(string name, string position, int salary)
     {
-        public string Name { get; set; }
-        public string Position { get; set; }
-        public int Salary { get; set; }
-
-        public Employee(string name, string position, int salary)
-        {
-            Name = name;
-            Position = position;
-            Salary = salary;
-        }
+        public string Name { get; set; } = name;
+        public string Position { get; set; } = position;
+        public int Salary { get; set; } = salary;
     }
 }
